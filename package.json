@@ -1,0 +1,19 @@
+{
+  "name": "k6-loadtest",
+  "version": "0.0.1",
+  "description": "A performance testing suite for Azkaban, utilizing k6 for robust load and stress testing.",
+  "main": "index.js",
+  "scripts": {
+    "build:viz": "docker-compose -f viz.yml up -d",
+    "start:silent": "npm install --legacy-peer-deps && docker-compose -f k6.yml down && docker-compose -f k6.yml up --build -d && docker-compose -f k6.yml logs -f",
+    "start:debug": "docker-compose -f k6.yml up --build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@influxdata/influxdb-client": "^1.33.2",
+    "@influxdata/influxdb-client-apis": "^1.33.2",
+    "dotenv": "^16.4.5"
+  }
+}
